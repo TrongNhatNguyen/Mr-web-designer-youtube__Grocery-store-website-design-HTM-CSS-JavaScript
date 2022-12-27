@@ -1,0 +1,159 @@
+<style>
+    :root {
+        --width-btn-left-right: 30px;
+        --width-box-number: 40px;
+        --height-scroll-number-js: 38px;
+    }
+    .js-select-parent {
+        display: inline-block;
+        width: calc(2 * var(--width-btn-left-right) + var(--width-box-number));
+        border-radius: 5px;
+        overflow: hidden;
+        border: 1px solid #d6dbdf;
+    }
+    .js-select-parent > * {
+        float: left;
+        background-color: chocolate; /* màu nền */
+        color: rgb(32, 23, 23); /* màu số, - + */
+        text-align: center;
+
+        height: var(--height-scroll-number-js);
+        line-height: var(--height-scroll-number-js);
+    }
+    /* khung bọc khung số ở giữa */
+    .js-select-number {
+        width: var(--width-box-number);
+        position: relative;
+        overflow: hidden;
+    }
+    /* khung số ở giữa */
+    .number-stack {
+        width: var(--width-box-number);
+        position: absolute;
+        display: block;
+        bottom: 0px;
+        transition: all 0.3s;
+        background-color: #f8f9f9;
+        font-size: 1.4rem;
+    }
+    /* nút + - bên trái, phải */
+    .select-adjust {
+        cursor: pointer;
+        background-color: #d5d8dc;
+        font-weight: bold;
+        width: var(--width-btn-left-right);
+        font-size: 1.4rem;
+    }
+    /* đổi màu khi click nút - + */
+    .select-adjust:active {
+        background: #fad7a0;
+    }
+
+    @keyframes downDeny {
+        50% {
+            transform: translateY(-10px);
+        }
+        100% {
+            transform: translateY(0px);
+        }
+    }
+    @keyframes upDeny {
+        50% {
+            transform: translateY(10px);
+        }
+        100% {
+            transform: translateY(0px);
+        }
+    }
+    .noselect {
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+</style>
+<input type="number" class="js-select input-number" name="first" value="5" min="0" max="5" />
+
+<!-- <select>
+    <option>One</option>
+    <option>Two</option>
+</select> -->
+
+<script src="./js/plugin/jquery-3.6.1.min.js"></script>
+<script>
+    $(document).ready(function () {
+        const heightNumber = $(':root').css('--height-scroll-number-js').replace('px', '');
+        $('.js-select').wrap("<div class='js-select-parent noselect'></div>");
+        $('.js-select-parent').append(
+            "<div class='js-minus select-adjust'>-</div><div class='js-select-number'><div class='number-stack'></div></div><div class='js-plus select-adjust'>+</div>",
+        );
+        $('.input-number').css('display', 'none');
+        $('.js-select').each(function () {
+            var min = $(this).attr('min');
+            var max = parseInt($(this).attr('max'));
+            for (i = min; i < max + 1; i++) {
+                $(this)
+                    .siblings('.js-select-number')
+                    .children('.number-stack')
+                    .prepend(i + '<br>');
+            }
+            var $val = parseFloat($(this).val());
+            $(this)
+                .siblings('.js-select-number')
+                .children('.number-stack')
+                .css('bottom', '-' + $val * heightNumber + 'px');
+        });
+
+        $('.select-adjust').click(function () {
+            var $button = $(this);
+            var input = {
+                val: parseFloat($button.siblings('.js-select').val()),
+                min: parseFloat($button.siblings('.js-select').attr('min')),
+                max: parseFloat($button.siblings('.js-select').attr('max')),
+                obj: $button.siblings('.js-select'),
+                ui: $button.siblings('.js-select-number').children('.number-stack'),
+                changeVal: function (num) {
+                    input.obj.val(num);
+                    input.val = num;
+                    return num;
+                },
+                changeUI: function (num) {
+                    var tempVar = input.changeVal(num);
+                    console.log(tempVar * heightNumber);
+                    input.ui.css('bottom', '-' + tempVar * heightNumber + 'px');
+                },
+            };
+            if ($button.text() == '+') {
+                if (input.val < input.max) {
+                    var tempVal = input.val + 1;
+                    input.changeUI(tempVal);
+                } else {
+                    console.log('Denied');
+                    clearTimeout(nope);
+                    input.ui.css('animation', 'upDeny 0.4s');
+                    var nope = setTimeout(function () {
+                        input.ui.css('animation', '');
+                    }, 400);
+                }
+            } else {
+                if (input.val > input.min) {
+                    var tempVal = input.val - 1;
+                    input.changeUI(tempVal);
+                } else {
+                    console.log('Denied');
+                    clearTimeout(nope);
+                    input.ui.css('animation', 'downDeny 0.4s');
+                    var nope = setTimeout(function () {
+                        input.ui.css('animation', '');
+                    }, 400);
+                }
+            }
+        });
+    });
+
+    function changePos(numbers, pos) {
+        numbers.css('bottom', '-' + pos * heightNumber + 'px');
+    }
+</script>

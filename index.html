@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Hugo website Selling vegetables</title>
+
+        <!-- CSS CDN files -->
+        <link href="./css/fontawesome-free-6.2.0-web/css/all.min.css" rel="stylesheet" />
+
+        <!-- CSS Custom -->
+        <link href="./css/MY-CUSTOM.css" rel="stylesheet" />
+        <link href="./css/quantity-product-cart.css" rel="stylesheet" />
+    </head>
+    <body>
+        <header class="header">
+            <a href="#" class="logo"><i class="fa-solid fa-leaf"></i>&nbsp;HugoVesta</a>
+
+            <nav class="navbar">
+                <a href="#home" class="nav-link">home</a>
+                <a href="#features" class="nav-link">features</a>
+                <a href="#products" class="nav-link">products</a>
+                <a href="#categories" class="nav-link">categories</a>
+                <a href="#review" class="nav-link">review</a>
+                <a href="#blogs" class="nav-link">blogs</a>
+            </nav>
+
+            <div class="icons">
+                <div class="fas fa-bars btn-header mr" id="menu"></div>
+                <div class="fas fa-search btn-header mr" id="search-form"></div>
+                <div class="fas fa-shopping-cart btn-header mr" id="shopping-cart"></div>
+                <div class="fas fa-user btn-header" id="login-form"></div>
+            </div>
+
+            <form action="#" class="search-form">
+                <input type="search" name="search" id="search-box" placeholder="Tìm kiếm.." />
+                <label for="search-box" class="fas fa-search"></label>
+            </form>
+
+            <div class="shopping-cart">
+                <div class="box">
+                    <div class="fa-solid fa-trash-can"></div>
+                    <img src="./image/cart-img-1.png" alt="cart-img-1" />
+                    <div class="content">
+                        <h3>watermelon</h3>
+                        <span class="price">giá: <b>40.000đ</b></span>
+                        <span class="qty">
+                            số lượng:
+                            <input type="number" class="js-select input-number" name="qty_1" value="1" min="0" max="10" />
+                        </span>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <div class="fa-solid fa-trash-can"></div>
+                    <img src="./image/cart-img-2.png" alt="cart-img-1" />
+                    <div class="content">
+                        <h3>watermelon</h3>
+                        <span class="price">giá: <b>30.000đ</b></span>
+                        <span class="qty">
+                            số lượng:
+                            <input type="number" class="js-select input-number" name="first" value="1" min="0" max="10" />
+                        </span>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <div class="fa-solid fa-trash-can"></div>
+                    <img src="./image/cart-img-3.png" alt="cart-img-1" />
+                    <div class="content">
+                        <h3>gà nướng nguyên</h3>
+                        <span class="price">giá: <b>20.000đ</b></span>
+                        <span class="qty">
+                            số lượng:
+                            <input type="number" class="js-select input-number" name="first" value="1" min="0" max="10" />
+                        </span>
+                    </div>
+                </div>
+
+                <!-- tổng giá -->
+                <div class="total">tổng giá: <span>90.000đ</span></div>
+                <a href="#" class="btn btn-checkout">Thanh toán</a>
+            </div>
+
+            <div class="login-form">
+                <h3>Đăng nhập</h3>
+                <div class="form-group">
+                    <label class="fa-solid fa-envelope"></label>
+                    <input type="email" name="email" class="form-control" placeholder="nhập email.." />
+                </div>
+                <div class="form-group">
+                    <label class="fa-solid fa-key"></label>
+                    <input type="password" name="password" class="form-control" id="password" placeholder="mật khẩu.." />
+                </div>
+                <div class="form-group">
+                    <input class="show-pass" type="checkbox" onclick="toggleShowPassword()" />
+                    Hiện mật khẩu
+                </div>
+                <p>Bạn không nhớ mật khẩu ? <a href="#">nhấn vào đây.</a></p>
+                <p>Bạn chưa có tài khoản, <a href="#">tạo ngay.</a></p>
+
+                <input type="submit" class="btn btn-submit" value="đăng nhập" />
+            </div>
+        </header>
+
+        <!-- ================================================ -->
+        <!-- JS CDN file -->
+        <script src="./js/plugin/jquery-3.6.1.min.js"></script>
+        <script src="./js/MY-CUSTOM.js"></script>
+        <script src="./js/quantity-product-cart.js"></script>
+    </body>
+</html>

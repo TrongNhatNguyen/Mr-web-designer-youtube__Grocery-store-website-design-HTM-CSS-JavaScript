@@ -1,0 +1,352 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    outline: none;
+    border: none;
+    text-transform: capitalize; /* viết hoa chữ cái đầu mỗi chữ */
+}
+
+@font-face {
+    font-family: 'Nunito-Regular';
+    src: local('Nunito-Regular'), url('./../fonts/Nunito/static/Nunito-Regular.ttf');
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline-width: 0;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+input {
+    line-height: normal;
+}
+label,
+button {
+    cursor: pointer;
+}
+a {
+    text-decoration: none;
+}
+/* ============================= */
+.mr {
+    margin-right: 0.2rem;
+}
+.btn {
+    display: block;
+    width: 100%;
+    height: 3rem;
+    line-height: 3rem;
+    border-radius: 0.5rem;
+    font-size: 1.3rem;
+    font-weight: bold;
+    text-align: center;
+    background-color: #f5b041;
+    color: var(--black);
+    transition: all 0.2s linear;
+}
+.btn:hover {
+    background-color: #ff7800;
+    color: #eee;
+}
+.btn-active {
+    background-color: var(--orange) !important;
+    color: #eee !important;
+}
+
+/*------------------------
+        TẠO BIẾN
+------------------------*/
+:root {
+    --orange: #ff7800;
+    --black: #130f40;
+    --light-color: #666;
+    --box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    --border: 1rem solid rgba(0, 0, 0, 0.1);
+    --outline: 1rem solid rgba(0, 0, 0, 0.1);
+    --outline-hover: 2rem solid rgba(0, 0, 0, 0.1);
+
+    --global-mg-padd-spacing: 1rem; /* ~ 16px, khoảng cách magin, padd mặc định */
+    --outline-spacing: 1.6; /* ~ 25px, khoảng cách viền ngoài cùng */
+}
+
+html {
+    font-family: 'Nunito-Regular';
+    font-size: 100%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-padding-top: 7rem;
+    transition: all 0.2s linear;
+}
+
+body {
+    min-height: 100vh;
+    color: rgb(22, 22, 22);
+    background-color: #eee;
+    /* background: linear-gradient(50deg, var(--color-gradient-a), var(--color-gradient-b)); */
+    opacity: 1;
+}
+
+/* ============================= */
+/*-----------------------
+    CSS phần header
+------------------------*/
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 7%;
+    background-color: #fff;
+    box-shadow: var(--box-shadow);
+}
+
+/*-----------------
+    LOGO
+------------------*/
+.header .logo {
+    font-size: 1.5rem;
+    font-weight: bolder;
+    color: var(--black);
+}
+.header .logo i {
+    font-size: 1.7rem;
+    color: var(--orange);
+}
+
+/*-----------------
+    Danh mục
+------------------*/
+.header .navbar a {
+    /* background-color: #ff7800; */
+    display: inline-block;
+    font-size: 1.2rem;
+    margin: 0 0.2rem;
+    padding: 1rem 0.7rem;
+    color: var(--black);
+}
+.header .navbar a:hover {
+    color: var(--orange);
+}
+
+/*----------------------------------
+    Nút tìm kiếm - giỏ hàng - user
+-----------------------------------*/
+.header .icons div {
+    background-color: #ff7800;
+    width: 3rem;
+    height: 2.5rem;
+    font-size: 1.2rem;
+    line-height: 2.5rem;
+    text-align: center;
+    border-radius: 0.5rem;
+    color: var(--black);
+    background-color: #eee;
+    cursor: pointer;
+}
+.header .icons div:hover {
+    color: #eee;
+    background-color: var(--orange);
+    transition: all 0.2s ease-in;
+}
+#menu {
+    visibility: hidden;
+}
+
+/*-------------------
+    form tìm kiếm..
+--------------------*/
+.header .search-form {
+    position: absolute;
+    top: 110%;
+    right: -26rem;
+    width: 25rem;
+    height: 3rem;
+    background-color: #fff;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    box-shadow: var(--box-shadow);
+    opacity: 0;
+}
+.header .search-form.active {
+    right: 0.5rem;
+    opacity: 1;
+    transition: all 0.5s linear;
+}
+.header .search-form input {
+    width: 100%;
+    height: 100%;
+    padding: 0 1rem;
+    font-size: 1.2rem;
+    text-transform: none; /* huỷ viết hoa chữ cái đầu mỗi chữ */
+}
+.header .search-form label {
+    display: inline-block;
+    background-color: #ff7800;
+    font-size: 1.3rem;
+    line-height: 3rem;
+    padding: 0 1rem;
+}
+.header .search-form label:hover {
+    color: #eee;
+    transition: all 0.2s linear;
+}
+
+/*----------------
+    Giỏ hàng
+-----------------*/
+.header .shopping-cart {
+    position: absolute;
+    top: 110%;
+    right: -25rem;
+    width: 24rem;
+    height: auto;
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: var(--box-shadow);
+    opacity: 0;
+}
+.header .shopping-cart.active {
+    right: 0.5rem;
+    opacity: 1;
+    transition: all 0.4s linear;
+}
+.header .shopping-cart .box {
+    display: flex;
+    flex-direction: row; /* sắp xếp các phần tử con thành hàng ngang */
+    gap: 1rem; /* khoảng cách giữa các phần tử con trong box */
+    align-items: center;
+
+    position: relative;
+    margin-bottom: 0.1rem;
+    /* background-color: rgb(226, 210, 241); */
+}
+.header .shopping-cart .box .fa-trash-can {
+    position: absolute;
+    top: 30%;
+    right: 0;
+    width: 2.3rem;
+    height: 2.5rem;
+    font-size: 1.2rem;
+    line-height: 2.5rem;
+    text-align: center;
+    border-radius: 0.5rem;
+    color: var(--light-color);
+    background-color: #eee;
+    cursor: pointer;
+}
+.header .shopping-cart .box .fa-trash-can:hover {
+    color: var(--orange);
+}
+.header .shopping-cart .box img {
+    width: 7rem;
+}
+.header .shopping-cart .box .content {
+    margin-right: 3rem;
+}
+.header .shopping-cart .box .content h3 {
+    color: var(--black);
+    font-size: 1.2rem;
+}
+.header .shopping-cart .box .content .qty {
+    margin-top: 0.2rem;
+    display: flex;
+    align-items: center;
+}
+
+/* btn thùng rác */
+.header .shopping-cart .box .fa-trash-can span {
+    color: var(--light-color);
+}
+
+/* Tổng - nút thanh toán */
+.header .shopping-cart .total {
+    width: 100%;
+    padding: 1rem 0;
+    font-size: 1.4rem;
+    text-align: center;
+    border-top: 1px solid #eee;
+}
+.header .shopping-cart .total span {
+    font-weight: bold;
+}
+
+/*-------------------
+    Form Đăng nhập
+--------------------*/
+.header .login-form {
+    position: absolute;
+    top: 110%;
+    right: -25rem;
+    width: 24rem;
+    border-radius: 0.5rem;
+    background-color: #fff;
+    box-shadow: var(--box-shadow);
+    padding: 1rem;
+    opacity: 0;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    justify-content: baseline;
+}
+.header .login-form.active {
+    right: 0.5rem;
+    opacity: 1;
+    transition: all 0.4s linear;
+}
+.header .login-form h3 {
+    font-size: 1, 3rem;
+    text-transform: uppercase;
+}
+.header .login-form .form-group {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+.header .login-form .form-group label {
+    display: inline-block;
+    background-color: #f39c12;
+    font-size: 1.3rem;
+    line-height: 3rem;
+    padding: 0 1rem;
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+}
+.header .login-form .form-group .form-control {
+    width: 100%;
+    height: 3rem;
+    font-size: 1.2rem;
+    padding: 0 1rem;
+    border-top-right-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+    border: 3px solid #eaecee;
+    border-left: unset;
+    text-transform: none;
+}
+.header .login-form .form-group .show-pass {
+    width: 1.3rem;
+    height: 1.3rem;
+    margin: 0 1rem;
+}
+.header .login-form p {
+    color: var(--light-color);
+}
+.header .login-form p a {
+    text-decoration: underline;
+    font-weight: bold;
+}
