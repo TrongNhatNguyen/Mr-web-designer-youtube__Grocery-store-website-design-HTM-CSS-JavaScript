@@ -17,28 +17,28 @@
         <header class="header">
             <a href="#" class="logo"><i class="fa-solid fa-leaf"></i>&nbsp;HugoVesta</a>
 
-            <nav class="navbar">
-                <a href="#home" class="nav-link">home</a>
-                <a href="#features" class="nav-link">features</a>
-                <a href="#products" class="nav-link">products</a>
-                <a href="#categories" class="nav-link">categories</a>
-                <a href="#review" class="nav-link">review</a>
+            <nav class="navbar box">
+                <a href="#home" class="nav-link">trang chủ</a>
+                <a href="#features" class="nav-link">tính năng</a>
+                <a href="#products" class="nav-link">sản phẩm</a>
+                <a href="#categories" class="nav-link">danh mục</a>
+                <a href="#review" class="nav-link">đánh giá</a>
                 <a href="#blogs" class="nav-link">blogs</a>
             </nav>
 
             <div class="icons">
-                <div class="fas fa-bars btn-header mr" id="menu"></div>
+                <div class="fas fa-bars btn-header mr" id="navbar"></div>
                 <div class="fas fa-search btn-header mr" id="search-form"></div>
                 <div class="fas fa-shopping-cart btn-header mr" id="shopping-cart"></div>
                 <div class="fas fa-user btn-header" id="login-form"></div>
             </div>
 
-            <form action="#" class="search-form">
+            <form action="#" class="search-form box">
                 <input type="search" name="search" id="search-box" placeholder="Tìm kiếm.." />
                 <label for="search-box" class="fas fa-search"></label>
             </form>
 
-            <div class="shopping-cart">
+            <div class="shopping-cart box">
                 <div class="box">
                     <div class="fa-solid fa-trash-can"></div>
                     <img src="./image/cart-img-1.png" alt="cart-img-1" />
@@ -83,7 +83,7 @@
                 <a href="#" class="btn btn-checkout">Thanh toán</a>
             </div>
 
-            <div class="login-form">
+            <div class="login-form box">
                 <h3>Đăng nhập</h3>
                 <div class="form-group">
                     <label class="fa-solid fa-envelope"></label>
@@ -97,12 +97,51 @@
                     <input class="show-pass" type="checkbox" onclick="toggleShowPassword()" />
                     Hiện mật khẩu
                 </div>
-                <p>Bạn không nhớ mật khẩu ? <a href="#">nhấn vào đây.</a></p>
+                <p>Bạn không nhớ mật khẩu ? <a href="#">vào đây.</a></p>
                 <p>Bạn chưa có tài khoản, <a href="#">tạo ngay.</a></p>
 
-                <input type="submit" class="btn btn-submit" value="đăng nhập" />
+                <input type="submit" class="btn btn-login" value="đăng nhập" />
             </div>
         </header>
+
+        <!-- === MAIN CONTENTS === -->
+        <section class="home" id="home">
+            <div class="content">
+                <h3>sản phẩm tươi ngon và <span>hữu cơ</span> dành cho bạn</h3>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Est sed dignissimos eos distinctio dolorum at tenetur placeat laudantium
+                </p>
+                <div class="btn btn-shop-now">Mua ngay</div>
+            </div>
+        </section>
+
+        <section class="features" id="features">
+            <h1 class="heading-title">Our <span>Features</span></h1>
+
+            <div class="container">
+                <div class="box">
+                    <img src="./image/feature-img-1.png" alt="tinh-nang" />
+                    <h3>Tươi ngon và hữu cơ</h3>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt magnam velit dignissimos blanditiis eveniet vero.</p>
+                    <a href="#" class="btn">Xem thêm</a>
+                </div>
+
+                <div class="box">
+                    <img src="./image/feature-img-2.png" alt="tinh-nang" />
+                    <h3>Miễn phí vận chuyển</h3>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt magnam velit dignissimos blanditiis eveniet vero.</p>
+                    <a href="#" class="btn">Xem thêm</a>
+                </div>
+
+                <div class="box">
+                    <img src="./image/feature-img-3.png" alt="tinh-nang" />
+                    <h3>Dễ dàng thanh toán</h3>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt magnam velit dignissimos blanditiis eveniet vero.</p>
+                    <a href="#" class="btn">Xem thêm</a>
+                </div>
+            </div>
+        </section>
+        <!-- === END MAIN CONTENTS === -->
 
         <!-- ================================================ -->
         <!-- JS CDN file -->

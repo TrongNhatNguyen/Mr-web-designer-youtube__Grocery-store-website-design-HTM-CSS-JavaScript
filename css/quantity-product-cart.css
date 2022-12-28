@@ -4,7 +4,8 @@
     --height-scroll-number-js: 26px;
 }
 .js-select-parent {
-    display: inline-block;
+    display: flex;
+    white-space: nowrap;
     width: calc(2 * var(--width-btn-left-right) + var(--width-box-number));
     border-radius: 5px;
     overflow: hidden;

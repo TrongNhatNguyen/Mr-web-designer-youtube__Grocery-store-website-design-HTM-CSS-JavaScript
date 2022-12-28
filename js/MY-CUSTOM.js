@@ -1,23 +1,9 @@
 /*------------------------------------------------
-    Hiển thị form tìm kiếm khi nhấn icon - header
+    Hiển thị Box Nội dung khi nhấn icon - header
 -------------------------------------------------*/
-// let searchBTN = document.querySelector('.search-btn');
-// searchBTN.onclick = (e) => {
-//     searchBTN.classList.toggle('btn-active');
-//     toggleClass('.search-form');
-//     toggleClass('.shopping-cart', false);
-// };
-
-/*------------------------------------------------
-    Hiển thị Shopping Cart khi nhấn icon - header
--------------------------------------------------*/
-// document.querySelector('#shopping-cart-btn').onclick = () => {
-//     this.classList.toggle('btn-active');
-//     toggleClass('.shopping-cart');
-//     toggleClass('.search-form', false);
-// };
 const btnList = document.querySelectorAll('.btn-header');
-const ArrID = ['search-form', 'shopping-cart', 'login-form'];
+const boxList = document.querySelectorAll('.box');
+const ArrID = ['navbar', 'search-form', 'shopping-cart', 'login-form'];
 
 // 1. Dò tất cả các button có class giống nhau:
 for (let i = 0; i < btnList.length; i++) {
@@ -41,6 +27,20 @@ for (let i = 0; i < btnList.length; i++) {
         }
     });
 }
+
+/*-------------------------------------------
+    Ẩn Box Nội dung khi cuộn - header
+--------------------------------------------*/
+window.onscroll = () => {
+    setTimeout(() => {
+        for (let i = 0; i < btnList.length; i++) {
+            btnList[i].classList.remove('active');
+        }
+        for (let i = 0; i < boxList.length; i++) {
+            ArrID.classList.remove('active');
+        }
+    }, 200);
+};
 
 // ==========================================
 function toggleShowPassword() {

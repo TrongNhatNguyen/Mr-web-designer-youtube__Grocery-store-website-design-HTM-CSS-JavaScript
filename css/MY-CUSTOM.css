@@ -35,46 +35,21 @@ button {
 a {
     text-decoration: none;
 }
-/* ============================= */
-.mr {
-    margin-right: 0.2rem;
-}
-.btn {
-    display: block;
-    width: 100%;
-    height: 3rem;
-    line-height: 3rem;
-    border-radius: 0.5rem;
-    font-size: 1.3rem;
-    font-weight: bold;
-    text-align: center;
-    background-color: #f5b041;
-    color: var(--black);
-    transition: all 0.2s linear;
-}
-.btn:hover {
-    background-color: #ff7800;
-    color: #eee;
-}
-.btn-active {
-    background-color: var(--orange) !important;
-    color: #eee !important;
-}
 
 /*------------------------
         TẠO BIẾN
 ------------------------*/
 :root {
-    --orange: #ff7800;
+    --orange: #ff952b;
     --black: #130f40;
     --light-color: #666;
-    --box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
-    --border: 1rem solid rgba(0, 0, 0, 0.1);
-    --outline: 1rem solid rgba(0, 0, 0, 0.1);
-    --outline-hover: 2rem solid rgba(0, 0, 0, 0.1);
+    --box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
+    --border: 0.2rem solid rgba(0, 0, 0, 0.1);
+    --outline: 0.1rem solid rgba(0, 0, 0, 0.1);
+    --outline-hover: 0.2rem solid rgba(0, 0, 0, 0.2);
 
-    --global-mg-padd-spacing: 1rem; /* ~ 16px, khoảng cách magin, padd mặc định */
-    --outline-spacing: 1.6; /* ~ 25px, khoảng cách viền ngoài cùng */
+    --gap-spacing: 2rem; /* khoảng giữa các box, card */
+    --outline-spacing: 6rem; /* khoảng cách giữa viền ngoài cùng và container */
 }
 
 html {
@@ -95,6 +70,36 @@ body {
 }
 
 /* ============================= */
+.mr {
+    margin-right: 0.2rem;
+}
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    font-size: 1.3rem;
+    font-weight: bold;
+    background-color: #fff;
+    color: var(--black);
+    transition: all 0.2s linear;
+}
+.btn:hover {
+    background-color: var(--orange);
+    color: #eee;
+}
+.btn-active {
+    background-color: var(--orange) !important;
+    color: #eee !important;
+}
+.btn-checkout,
+.btn-login {
+    width: 100%;
+    background-color: #ffd0a1;
+}
+/* ============================= */
 /*-----------------------
     CSS phần header
 ------------------------*/
@@ -103,20 +108,24 @@ header {
     top: 0;
     left: 0;
     right: 0;
+    padding: 0.5rem var(--outline-spacing);
+    box-shadow: var(--box-shadow);
+    background-color: #fff;
+    z-index: 1000;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0.5rem 7%;
-    background-color: #fff;
-    box-shadow: var(--box-shadow);
 }
 
 /*-----------------
     LOGO
 ------------------*/
 .header .logo {
+    white-space: nowrap; /* không rơi xuống hàng dưới */
     font-size: 1.5rem;
     font-weight: bolder;
+    margin-right: 1rem;
     color: var(--black);
 }
 .header .logo i {
@@ -128,11 +137,11 @@ header {
     Danh mục
 ------------------*/
 .header .navbar a {
-    /* background-color: #ff7800; */
     display: inline-block;
     font-size: 1.2rem;
+    font-weight: bold;
     margin: 0 0.2rem;
-    padding: 1rem 0.7rem;
+    padding: 1rem 0.5rem;
     color: var(--black);
 }
 .header .navbar a:hover {
@@ -142,8 +151,11 @@ header {
 /*----------------------------------
     Nút tìm kiếm - giỏ hàng - user
 -----------------------------------*/
+.header .icons {
+    white-space: nowrap; /* không rơi xuống hàng dưới */
+    margin-left: -1rem;
+}
 .header .icons div {
-    background-color: #ff7800;
     width: 3rem;
     height: 2.5rem;
     font-size: 1.2rem;
@@ -159,7 +171,7 @@ header {
     background-color: var(--orange);
     transition: all 0.2s ease-in;
 }
-#menu {
+#navbar {
     visibility: hidden;
 }
 
@@ -194,7 +206,7 @@ header {
 }
 .header .search-form label {
     display: inline-block;
-    background-color: #ff7800;
+    background-color: var(--orange);
     font-size: 1.3rem;
     line-height: 3rem;
     padding: 0 1rem;
@@ -349,4 +361,187 @@ header {
 .header .login-form p a {
     text-decoration: underline;
     font-weight: bold;
+}
+
+/* ================================================== */
+/* MAIN CONTENTS */
+section {
+    display: block;
+    padding: 2rem 0;
+}
+.heading-title {
+    font-size: 2.5rem;
+    text-align: center;
+    padding: 1.5rem 0;
+    padding-bottom: 2rem;
+    color: var(--black);
+}
+.heading-title span {
+    background-color: var(--orange);
+    color: #fff;
+    display: inline-block;
+    padding: 0 2rem;
+    clip-path: polygon(100% 0, 93% 50%, 100% 99%, 0% 100%, 7% 50%, 0% 0%);
+}
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 3rem var(--outline-spacing);
+    margin-left: calc(-1 * var(--gap-spacing)); /* dịch sang trái: -2rem */
+}
+
+/*--------------------
+    TRANG CHỦ - HOME
+---------------------*/
+.home {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url('../image/banner-bg.webp');
+    background-position: center;
+    background-size: cover;
+    padding-top: 15rem;
+    padding-bottom: 7rem;
+}
+.home .content {
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 60rem;
+}
+.home .content h3 {
+    font-size: 2.7rem;
+    font-weight: bold;
+    color: var(--black);
+}
+.home .content h3 span {
+    color: var(--orange);
+}
+.home .content p {
+    font-size: 1.3rem;
+}
+.btn-shop-now {
+    margin-top: 2rem;
+    border: 2px solid var(--black);
+    background-color: unset;
+    padding: 0.5rem 2rem;
+}
+
+/*--------------------------------
+    TRANG TÍNH NĂNG - FEATURES
+---------------------------------*/
+.features .container .box {
+    display: flex;
+    flex-direction: column;
+    flex: 1; /* căn đều h3 các box khi img khác nhau */
+
+    --column-features: 3;
+    width: calc(calc(100% / var(--column-features)) - var(--gap-spacing)); /* 4 card 1 hàng trừ cho 2rem grid */
+    margin-left: var(--gap-spacing);
+    margin-bottom: var(--gap-spacing);
+
+    padding: 2rem;
+    outline: var(--outline);
+    outline-offset: -1rem;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 0.5rem;
+    box-shadow: var(--box-shadow);
+}
+.features .container .box:hover {
+    outline: var(--outline-hover);
+    outline-offset: 0rem;
+    transition: all 0.2s linear;
+}
+.features .container .box img {
+    margin: 1rem 0;
+    height: auto;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+.features .container .box h3 {
+    margin-top: auto; /* kích hoạt căn đều h3 các box */
+}
+
+/* ================================================== */
+/*-------------------------------------------------
+    RESPONSIVE IPAD NẰM NGANG MAX 1024px -> 1200px
+--------------------------------------------------*/
+@media (max-width: 1200px) {
+    :root {
+        --outline-spacing: 4rem;
+    }
+    html {
+        font-size: 90%;
+    }
+}
+
+/*-------------------------------------------------
+    RESPONSIVE IPAD NẰM DỌC MAX 768px -> 1023px
+--------------------------------------------------*/
+@media (max-width: 1023px) {
+    :root {
+        --outline-spacing: 1rem;
+    }
+    html {
+        font-size: 80%;
+    }
+    .header .navbar a {
+        padding: 1rem 0.1rem;
+    }
+}
+
+/*-------------------------------------------------
+    RESPONSIVE ĐIỆN THOẠI NGANG MAX 481px -> 767px
+--------------------------------------------------*/
+@media (max-width: 767px) {
+    .mr {
+        margin-right: 1rem;
+    }
+    #navbar {
+        visibility: visible;
+    }
+    .header .navbar {
+        position: absolute;
+        top: 110%;
+        right: -21rem;
+        width: 20rem;
+        border-radius: 0.5rem;
+        background-color: #fff;
+        box-shadow: var(--box-shadow);
+        opacity: 0;
+
+        display: flex;
+        flex-direction: column;
+        gap: 0rem;
+    }
+    .header .navbar.active {
+        right: 0.5rem;
+        opacity: 1;
+        transition: all 0.3s linear;
+    }
+    .header .navbar a {
+        margin: 0;
+        padding: 1rem 1.5rem;
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: var(--light-color);
+    }
+    .header .navbar a:hover {
+        background-color: var(--orange);
+        color: #fff;
+    }
+}
+
+/*-------------------------------------------------
+    RESPONSIVE ĐIỆN THOẠI DỌC MAX 180px -> 480px
+--------------------------------------------------*/
+@media (max-width: 480px) {
+    .header .search-form,
+    .header .login-form {
+        width: 97%;
+    }
 }
