@@ -6,10 +6,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Hugo website Selling vegetables</title>
 
-        <!-- CSS CDN files -->
-        <link href="./css/fontawesome-free-6.2.0-web/css/all.min.css" rel="stylesheet" />
+        <!-- CSS CDN Plugin files -->
+        <link href="./fonts/fontawesome-free-6.2.0-web/css/all.min.css" rel="stylesheet" />
 
-        <!-- CSS Custom -->
+        <!-- slider sản phẩm -->
+        <link href="./css/plugin/swiper-bundle.min.css" rel="stylesheet" />
+
+        <!-- CSS CUSTOM -->
         <link href="./css/MY-CUSTOM.css" rel="stylesheet" />
         <link href="./css/quantity-product-cart.css" rel="stylesheet" />
     </head>
@@ -17,7 +20,7 @@
         <header class="header">
             <a href="#" class="logo"><i class="fa-solid fa-leaf"></i>&nbsp;HugoVesta</a>
 
-            <nav class="navbar box">
+            <nav class="navbar box-header">
                 <a href="#home" class="nav-link">trang chủ</a>
                 <a href="#features" class="nav-link">tính năng</a>
                 <a href="#products" class="nav-link">sản phẩm</a>
@@ -27,18 +30,18 @@
             </nav>
 
             <div class="icons">
-                <div class="fas fa-bars btn-header mr" id="navbar"></div>
-                <div class="fas fa-search btn-header mr" id="search-form"></div>
-                <div class="fas fa-shopping-cart btn-header mr" id="shopping-cart"></div>
-                <div class="fas fa-user btn-header" id="login-form"></div>
+                <div class="fas fa-bars mr" id="navbar"></div>
+                <div class="fas fa-search mr" id="search-form"></div>
+                <div class="fas fa-shopping-cart mr" id="shopping-cart"></div>
+                <div class="fas fa-user" id="login-form"></div>
             </div>
 
-            <form action="#" class="search-form box">
+            <form action="#" class="search-form box-header">
                 <input type="search" name="search" id="search-box" placeholder="Tìm kiếm.." />
                 <label for="search-box" class="fas fa-search"></label>
             </form>
 
-            <div class="shopping-cart box">
+            <div class="shopping-cart box-header">
                 <div class="box">
                     <div class="fa-solid fa-trash-can"></div>
                     <img src="./image/cart-img-1.png" alt="cart-img-1" />
@@ -83,7 +86,7 @@
                 <a href="#" class="btn btn-checkout">Thanh toán</a>
             </div>
 
-            <div class="login-form box">
+            <div class="login-form box-header">
                 <h3>Đăng nhập</h3>
                 <div class="form-group">
                     <label class="fa-solid fa-envelope"></label>
@@ -116,28 +119,402 @@
         </section>
 
         <section class="features" id="features">
-            <h1 class="heading-title">Our <span>Features</span></h1>
+            <h1 class="heading-title">Tất cả <span>tính năng</span></h1>
 
             <div class="container">
                 <div class="box">
                     <img src="./image/feature-img-1.png" alt="tinh-nang" />
-                    <h3>Tươi ngon và hữu cơ</h3>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt magnam velit dignissimos blanditiis eveniet vero.</p>
-                    <a href="#" class="btn">Xem thêm</a>
+                    <div class="content">
+                        <h3>Tươi ngon và hữu cơ</h3>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt magnam velit .</p>
+                        <a href="#" class="btn btn-read-more">Xem thêm</a>
+                    </div>
                 </div>
 
                 <div class="box">
                     <img src="./image/feature-img-2.png" alt="tinh-nang" />
-                    <h3>Miễn phí vận chuyển</h3>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt magnam velit dignissimos blanditiis eveniet vero.</p>
-                    <a href="#" class="btn">Xem thêm</a>
+                    <div class="content">
+                        <h3>Miễn phí vận chuyển</h3>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+                        <a href="#" class="btn btn-read-more">Xem thêm</a>
+                    </div>
                 </div>
 
                 <div class="box">
                     <img src="./image/feature-img-3.png" alt="tinh-nang" />
-                    <h3>Dễ dàng thanh toán</h3>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt magnam velit dignissimos blanditiis eveniet vero.</p>
-                    <a href="#" class="btn">Xem thêm</a>
+                    <div class="content">
+                        <h3>Dễ dàng thanh toán nhanh chóng</h3>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt magnam velit.</p>
+                        <a href="#" class="btn btn-read-more">Xem thêm</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="products" id="products">
+            <h1 class="heading-title">Tất cả <span>sản phẩm</span></h1>
+
+            <!-- Hàng sản phẩm slider số 1 -->
+            <div class="container">
+                <div class="product-slider swiper">
+                    <div class="swiper-wrapper">
+                        <div class="box swiper-slide">
+                            <img src="./image/product-1.png" alt="product" />
+                            <h3>Cam tươi việt nam</h3>
+                            <div class="content">
+                                <div class="box-left">
+                                    <div class="price">20.000đ</div>
+                                    <div class="stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                </div>
+                                <div class="box-right">
+                                    <div class="discount">-10%</div>
+                                    <h4>Trái cây tươi</h4>
+                                </div>
+                            </div>
+                            <a href="#" class="btn btn-add-cart">Thêm vào giỏ</a>
+                        </div>
+
+                        <div class="box swiper-slide">
+                            <img src="./image/product-2.png" alt="product" />
+                            <h3>Hành tươi</h3>
+                            <div class="content">
+                                <div class="box-left">
+                                    <div class="price">20.000đ</div>
+                                    <div class="stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                </div>
+                                <div class="box-right">
+                                    <div class="discount">-10%</div>
+                                    <h4>Rau củ</h4>
+                                </div>
+                            </div>
+                            <a href="#" class="btn btn-add-cart">Thêm vào giỏ</a>
+                        </div>
+
+                        <div class="box swiper-slide">
+                            <img src="./image/product-3.png" alt="product" />
+                            <h3>thịt bò tươi</h3>
+                            <div class="content">
+                                <div class="box-left">
+                                    <div class="price">20.000đ</div>
+                                    <div class="stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                </div>
+                                <div class="box-right">
+                                    <div class="discount">-10%</div>
+                                    <h4>Trái cây tươi</h4>
+                                </div>
+                            </div>
+                            <a href="#" class="btn btn-add-cart">Thêm vào giỏ</a>
+                        </div>
+
+                        <div class="box swiper-slide">
+                            <img src="./image/product-4.png" alt="product" />
+                            <h3>bắp cải xanh đà lạt</h3>
+                            <div class="content">
+                                <div class="box-left">
+                                    <div class="price">20.000đ</div>
+                                    <div class="stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                </div>
+                                <div class="box-right">
+                                    <div class="discount">-10%</div>
+                                    <h4>Trái cây tươi</h4>
+                                </div>
+                            </div>
+                            <a href="#" class="btn btn-add-cart">Thêm vào giỏ</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hàng sản phẩm slider số 2 -->
+            <div class="container">
+                <div class="product-slider swiper">
+                    <div class="swiper-wrapper">
+                        <div class="box swiper-slide">
+                            <img src="./image/product-5.png" alt="product" />
+                            <h3>Khoai tây ngọt</h3>
+                            <div class="content">
+                                <div class="box-left">
+                                    <div class="price">20.000đ</div>
+                                    <div class="stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                </div>
+                                <div class="box-right">
+                                    <div class="discount">-10%</div>
+                                    <h4>Trái cây tươi</h4>
+                                </div>
+                            </div>
+                            <a href="#" class="btn btn-add-cart">Thêm vào giỏ</a>
+                        </div>
+
+                        <div class="box swiper-slide">
+                            <img src="./image/product-6.png" alt="product" />
+                            <h3>bợ sáp dẻo</h3>
+                            <div class="content">
+                                <div class="box-left">
+                                    <div class="price">20.000đ</div>
+                                    <div class="stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                </div>
+                                <div class="box-right">
+                                    <div class="discount">-10%</div>
+                                    <h4>Trái cây tươi</h4>
+                                </div>
+                            </div>
+                            <a href="#" class="btn btn-add-cart">Thêm vào giỏ</a>
+                        </div>
+
+                        <div class="box swiper-slide">
+                            <img src="./image/product-7.png" alt="product" />
+                            <h3>cà rốt đà lạt</h3>
+                            <div class="content">
+                                <div class="box-left">
+                                    <div class="price">20.000đ</div>
+                                    <div class="stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                </div>
+                                <div class="box-right">
+                                    <div class="discount">-10%</div>
+                                    <h4>Trái cây tươi</h4>
+                                </div>
+                            </div>
+                            <a href="#" class="btn btn-add-cart">Thêm vào giỏ</a>
+                        </div>
+
+                        <div class="box swiper-slide">
+                            <img src="./image/product-8.png" alt="product" />
+                            <h3>chanh không hạt</h3>
+                            <div class="content">
+                                <div class="box-left">
+                                    <div class="price">20.000đ</div>
+                                    <div class="stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                </div>
+                                <div class="box-right">
+                                    <div class="discount">-10%</div>
+                                    <h4>Trái cây tươi</h4>
+                                </div>
+                            </div>
+                            <a href="#" class="btn btn-add-cart">Thêm vào giỏ</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="categories" id="categories">
+            <h1 class="heading-title">phần <span>Danh mục</span></h1>
+
+            <div class="container">
+                <div class="box">
+                    <img src="./image/cat-1.png" alt="danh-muc" />
+                    <div class="content">
+                        <h3>Rau củ tươi</h3>
+                        <p>giảm tới 45%</p>
+                        <a href="#" class="btn btn-shop-now">Xem ngay</a>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <img src="./image/cat-2.png" alt="danh-muc" />
+                    <div class="content">
+                        <h3>Rau củ tươi</h3>
+                        <p>giảm tới 45%</p>
+                        <a href="#" class="btn btn-shop-now">Xem ngay</a>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <img src="./image/cat-1.png" alt="danh-muc" />
+                    <div class="content">
+                        <h3>Rau củ tươi</h3>
+                        <p>giảm tới 45%</p>
+                        <a href="#" class="btn btn-shop-now">Xem ngay</a>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <img src="./image/cat-3.png" alt="danh-muc" />
+                    <div class="content">
+                        <h3>Rau củ tươi</h3>
+                        <p>giảm tới 45%</p>
+                        <a href="#" class="btn btn-shop-now">Xem ngay</a>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <img src="./image/cat-1.png" alt="danh-muc" />
+                    <div class="content">
+                        <h3>Rau củ tươi</h3>
+                        <p>giảm tới 45%</p>
+                        <a href="#" class="btn btn-shop-now">Xem ngay</a>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <img src="./image/cat-4.png" alt="danh-muc" />
+                    <div class="content">
+                        <h3>Rau củ tươi</h3>
+                        <p>giảm tới 45%</p>
+                        <a href="#" class="btn btn-shop-now">Xem ngay</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="review" id="review">
+            <h1 class="heading-title">Khách <span>Đánh giá</span></h1>
+
+            <div class="container">
+                <div class="review-slider swiper">
+                    <div class="swiper-wrapper">
+                        <div class="box swiper-slide">
+                            <img src="./image/pic-1.png" alt="danh-gia" />
+
+                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+                            <h3>Joe Doe</h3>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+
+                        <div class="box swiper-slide">
+                            <img src="./image/pic-2.png" alt="danh-gia" />
+
+                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vel ut voluptatem, architecto neque perspiciatis</p>
+                            <h3>Joe Doe</h3>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+
+                        <div class="box swiper-slide">
+                            <img src="./image/pic-3.png" alt="danh-gia" />
+
+                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vel ut voluptatem, architecto neque perspiciatis</p>
+                            <h3>Joe Doe</h3>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+
+                        <div class="box swiper-slide">
+                            <img src="./image/pic-4.png" alt="danh-gia" />
+
+                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vel ut voluptatem, architecto neque perspiciatis</p>
+                            <h3>Joe Doe</h3>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="blogs" id="blogs">
+            <h1 class="heading-title">Top <span>Blogs</span></h1>
+
+            <div class="container">
+                <div class="box">
+                    <img src="./image/blog-1.jpg" alt="blogs" />
+                    <div class="content">
+                        <div class="icons">
+                            <a href="#"><i class="fas fa-user"></i> by hugo</a>
+                            <a href="#"><i class="fas fa-calendar"></i> tháng 8, 2022</a>
+                        </div>
+                        <h3>sử dụng thực phẩm sạch?</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+                        <a href="#" class="btn btn-read-more">đọc thêm</a>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <img src="./image/blog-2.jpg" alt="blogs" />
+                    <div class="content">
+                        <div class="icons">
+                            <a href="#"><i class="fas fa-user"></i> by hugo</a>
+                            <a href="#"><i class="fas fa-calendar"></i> tháng 8, 2022</a>
+                        </div>
+                        <h3>sử dụng thực phẩm sạch có lợi cho sức khoẻ như thế nào, xem trên fb đển?</h3>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima sunt nam dicta alias nisi eaque, Minima sunt nam dicta
+                            alias nisi eaque
+                        </p>
+                        <a href="#" class="btn btn-read-more">đọc thêm</a>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <img src="./image/blog-3.jpg" alt="blogs" />
+                    <div class="content">
+                        <div class="icons">
+                            <a href="#"><i class="fas fa-user"></i> by hugo</a>
+                            <a href="#"><i class="fas fa-calendar"></i> tháng 8, 2022</a>
+                        </div>
+                        <h3>sử dụng thực phẩm sạch có lợi cho sức khoẻ như thế nào?</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima sunt nam dicta alias nisi eaque</p>
+                        <a href="#" class="btn btn-read-more">đọc thêm</a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -146,6 +523,12 @@
         <!-- ================================================ -->
         <!-- JS CDN file -->
         <script src="./js/plugin/jquery-3.6.1.min.js"></script>
+
+        <!-- slider sản phẩm -->
+        <script src="./js/plugin/swiper-bundle.min.js"></script>
+        <script src="./js/swiper-slider-custom.js"></script>
+
+        <!-- JS CUSTOM file -->
         <script src="./js/MY-CUSTOM.js"></script>
         <script src="./js/quantity-product-cart.js"></script>
     </body>
