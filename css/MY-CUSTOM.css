@@ -354,6 +354,7 @@ header {
 }
 .header .login-form p {
     color: var(--light-color);
+    font-size: 1rem;
 }
 .header .login-form p a {
     text-decoration: underline;
@@ -398,7 +399,7 @@ section {
     background: url('../image/banner-bg.webp');
     background-position: center;
     background-size: cover;
-    padding-top: 15rem;
+    padding-top: 18rem;
     padding-bottom: 7rem;
 }
 .home .content {
@@ -743,6 +744,7 @@ section {
 .blogs .box .content .icons i {
     font-size: 1.2rem;
     color: var(--orange);
+    margin-right: 0.5rem;
 }
 .blogs .box .content h3 {
     height: 4rem;
@@ -773,7 +775,114 @@ section {
     border: var(--border);
 }
 
-/* ================================================== */
+/*--------------------------------
+    TRANG CUỐI - FOOTER
+---------------------------------*/
+.footer {
+    clear: both;
+    background-color: #eee;
+}
+.footer .container {
+    padding: 1rem var(--outline-spacing);
+    margin-left: unset;
+    background-color: #ffffff;
+
+    display: grid;
+    /* chiều rộng của các cột: đơn vị là fr (4 giá trị = 4 box) */
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    /* chiều cao của các hàng */
+    grid-template-rows: auto;
+    /* khoảng cách giữa các box */
+    grid-gap: var(--gap-spacing);
+}
+.footer .container .box {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    padding: 1rem 0;
+    color: var(--light-color);
+}
+.footer .box .logo {
+    white-space: nowrap; /* không rơi xuống hàng dưới */
+    font-weight: bolder;
+    margin-right: 1rem;
+    color: var(--black);
+}
+.footer .box .logo i {
+    font-size: 1.7rem;
+    color: var(--orange);
+}
+.footer .box h3 {
+    color: var(--black);
+}
+.footer .box .share {
+    display: flex;
+    justify-content: flex-start;
+
+    padding: 1rem 0;
+    font-size: 1.5rem;
+}
+.footer .box .share a {
+    width: 3rem;
+    height: 3rem;
+    line-height: 3rem;
+    text-align: center;
+    border-radius: 0.5rem;
+    color: var(--black);
+    background-color: #eee;
+    margin-right: 2rem;
+}
+.footer .box .share a:hover {
+    color: var(--orange);
+}
+.footer .box .links {
+    color: var(--light-color);
+    text-transform: none;
+}
+.footer .box .links i {
+    color: var(--orange);
+    padding-right: 0.5rem;
+    transition: all 0.2s linear;
+}
+.footer .box .links:hover i {
+    padding-right: 1.5rem;
+}
+
+/* form subcribe */
+.footer .form-subcribe {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    padding-bottom: 1rem;
+}
+.footer .form-subcribe input.email {
+    width: 100%;
+    padding: 0.7rem;
+    font-size: 1.1rem;
+    background-color: #eee;
+    border: var(--border);
+    border-radius: 0.5rem;
+}
+.footer .form-subcribe input.btn-subcribe {
+    font-size: 1rem;
+    border: var(--border);
+    padding: 0.7rem 1.5rem;
+}
+
+/* giới thiệu cuối - CREDITS */
+.footer .credits {
+    padding: 1rem;
+    text-align: center;
+    background-color: #eee;
+}
+.footer .credits span {
+    color: var(--orange);
+    font-weight: bold;
+}
+
+/* ====================================================================================== */
 /*-------------------------------------------------
     RESPONSIVE IPAD NẰM NGANG MAX 1024px -> 1200px
 --------------------------------------------------*/
@@ -865,6 +974,17 @@ section {
     .blogs .container .box {
         --column-blogs: 2;
     }
+
+    /* Trang Cuối - FOOTER */
+    .footer .container {
+        padding: 0 var(--outline-spacing);
+        margin-left: unset;
+        background-color: #ffffff;
+
+        display: grid;
+        /* chiều rộng của các cột: đơn vị là fr (4 giá trị = 4 box) */
+        grid-template-columns: 1fr 1fr;
+    }
 }
 
 /*-------------------------------------------------
@@ -883,5 +1003,16 @@ section {
     /* Trang Bài viết - BLOGS */
     .blogs .container .box {
         --column-blogs: 1;
+    }
+
+    /* Trang Cuối - FOOTER */
+    .footer .container {
+        padding: 0 var(--outline-spacing);
+        margin-left: unset;
+        background-color: #ffffff;
+
+        display: grid;
+        /* chiều rộng của các cột: đơn vị là fr (4 giá trị = 4 box) */
+        grid-template-columns: 1fr;
     }
 }
